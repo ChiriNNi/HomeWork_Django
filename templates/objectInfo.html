@@ -1,0 +1,17 @@
+{% extends "layout/basic.html" %}
+{% block content %}
+    <table>
+        <tr>
+            <td><b>UserId</b></td>
+            <td><b>Id</b></td>
+            <td><b>Title</b></td>
+            <td><b>Completed</b></td>
+        </tr>
+        <tr>
+            <td>{{ object.userId }}</td>
+            <td>{{ object.id }}</td>
+            <td>{{ object.title }}</td>
+            <td>{{ object.completed }}</td>
+        </tr>
+    </table>
+{% endblock %}
