@@ -9,6 +9,7 @@ def getResponse(request):
     context = {'data': data}
     return render(request, 'index.html', context)
 
+
 def objectInfo(request, param):
     url = "https://jsonplaceholder.typicode.com/todos/"
     response = requests.get(url)
@@ -19,4 +20,7 @@ def objectInfo(request, param):
             object = item
     return render(request, 'objectInfo.html', {'object': object})
 
+
+def login_page(request):
+    return render(request, 'login.html')
 

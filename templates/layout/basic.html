@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'header.css' %}">
-    <link rel="stylesheet" href="{% static 'footer.css' %}">
+    {% block head %}
+    {% endblock %}
+    <link rel="stylesheet" href="{% static '_header.css' %}">
+    <link rel="stylesheet" href="{% static '_footer.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -14,9 +16,10 @@
 <body>
     <header class="header">
         <nav class="nav">
-            <a href="#" class="nav-item">Home</a>
+            <a href="{% url 'getResponse' %}" class="nav-item">Home</a>
             <a href="#" class="nav-item">Contact</a>
             <a href="#" class="nav-item">About</a>
+            <a href="{% url 'login' %}" class="nav-button">Log In</a>
         </nav>
     </header>
 
