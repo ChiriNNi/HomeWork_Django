@@ -1,0 +1,18 @@
+{% extends "layout/basic.html" %}
+{% block content %}
+    <table>
+        <tr>
+            <td><b>№</b></td>
+            <td><b>Title</b></td>
+            <td><b>Published</b></td>
+        </tr>
+        {% for item in data %}
+            <tr>
+                <td>{{ item.pk }}</td>
+                <td><a href="{% url 'bboard:detail' item.pk%}">{{ item.title }}</a></td>
+                <td>{{ item.published }}</td>
+                <td><a href="{% url 'bboard:delete' item.pk %}" class="nav-button">Delete</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
