@@ -17,13 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from bboard.views import BbIndexView, BbCreateView, BbDeleteView, BbDetailView, BbEditView, about_page, contacts_page
+from bboard.views import (  # BbIndexView,
+    BbCreateView, BbDeleteView, BbDetailView, BbEditView, about_page, contacts_page, index)
 
 app_name = 'bboard'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', BbIndexView.as_view(), name='index'),
+    # path('', BbIndexView.as_view(), name='index'),
+    path('', index, name='index'),
     path('about/', about_page, name='about'),
     path('contacts/', contacts_page, name='contacts'),
     path('add/', BbCreateView.as_view(), name='add'),
